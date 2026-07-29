@@ -68,40 +68,9 @@ function doPeriodsOverlap(period1: string, period2: string): boolean {
   // Check if they overlap
   const overlaps = start1Months <= end2Months && start2Months <= end1Months
 
-  // Exclude if they only touch at one month boundary
-  const touchesAtBoundary = (start1Months === end2Months) || (start2Months === end1Months)
   const overlapMonths = Math.min(end1Months, end2Months) - Math.max(start1Months, start2Months)
 
   return overlaps && overlapMonths > 0
-}
-
-function assignLanes(experiences: Experience[]): Map<string, number> {
-  const lanes = new Map<string, number>()
-  const laneEndDates: (Date | null)[] = []
-
-  experiences.forEach(exp => {
-    const { start, end } = parsePeriod(exp.period)
-
-    let assignedLane = -1
-    for (let i = 0; i < laneEndDates.length; i++) {
-      const laneEnd = laneEndDates[i]
-      if (!laneEnd || laneEnd < start) {
-        assignedLane = i
-        break
-      }
-    }
-
-    if (assignedLane === -1) {
-      assignedLane = laneEndDates.length
-      laneEndDates.push(end)
-    } else {
-      laneEndDates[assignedLane] = end
-    }
-
-    lanes.set(exp.id, assignedLane)
-  })
-
-  return lanes
 }
 
 export default function Timeline({ experiences, selectedIndex, onSelect, onFilterChange }: Props) {
@@ -138,8 +107,6 @@ export default function Timeline({ experiences, selectedIndex, onSelect, onFilte
     })
   }, [experiences, typeFilter, techFilters])
 
-  const lanes = useMemo(() => assignLanes(filtered), [filtered])
-  const maxLane = useMemo(() => Math.max(0, ...Array.from(lanes.values())), [lanes])
 
   const totalHeight = useMemo(() => {
     const minHeight = 60

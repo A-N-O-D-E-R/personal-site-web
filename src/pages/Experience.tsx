@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, useTexture, Sphere } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera, useTexture } from '@react-three/drei'
 import { Suspense, useState, useEffect, useRef } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Vector3 } from 'three'
