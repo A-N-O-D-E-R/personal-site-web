@@ -39,8 +39,8 @@ jobs:
       - name: Generate JSON files
         run: |
           mkdir -p src/data
-          echo '${{ vars.DATA_EXP_JSON }}' > src/data/experiences.json
-          echo '${{ vars.DATA_CONST_JSON }}' > src/data/const.json
+          echo '${{ vars.DATA_EXP_JSON }}' > /home/runner/work/personal-site-web/personal-site-web/src/data/experiences.json
+          echo '${{ vars.DATA_CONST_JSON }}' > /home/runner/work/personal-site-web/personal-site-web/src/data/const.json
 
       - run: pnpm build
 
