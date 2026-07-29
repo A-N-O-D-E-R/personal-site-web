@@ -39,14 +39,8 @@ jobs:
       - name: Generate JSON files
         run: |
           mkdir -p src/data
-
-          cat <<'EOF' > src/data/experiences.json
-          ${{ vars.DATA_EXP_JSON }}
-          EOF
-
-          cat <<'EOF' > src/data/const.json
-          ${{ vars.DATA_CONST_JSON }}
-          EOF
+          echo '${{ vars.DATA_EXP_JSON }}' > src/data/experiences.json
+          echo '${{ vars.DATA_CONST_JSON }}' > src/data/const.json
 
       - run: pnpm build
 
