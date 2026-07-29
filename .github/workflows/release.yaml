@@ -36,12 +36,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Generate JSON files
-        run: |
-          mkdir -p src/data
-          echo '${{ vars.DATA_EXP_JSON }}' > /home/runner/work/personal-site-web/personal-site-web/src/data/experiences.json
-          echo '${{ vars.DATA_CONST_JSON }}' > /home/runner/work/personal-site-web/personal-site-web/src/data/const.json
-
       - run: pnpm build
 
       - uses: actions/configure-pages@v5
