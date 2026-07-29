@@ -4,6 +4,7 @@ import { PerspectiveCamera, OrbitControls } from '@react-three/drei'
 import StarField from '../components/three/StarField'
 import SolarSystem from '../components/three/SolarSystem'
 import { useTranslation } from '../i18n/useTranslation'
+import data from '../data/const.json'
 
 export default function Landing() {
   const { t } = useTranslation()
@@ -42,7 +43,7 @@ export default function Landing() {
         <div className="h-screen flex items-center justify-center px-4">
           <div className="text-center max-w-4xl">
             <h1 className="text-7xl md:text-9xl font-thin tracking-tighter mb-6 text-white animate-fade-in">
-              Arthur RENAUX
+              {data.firstname} {data.lastname.toUpperCase()}
             </h1>
             <p className="text-2xl md:text-3xl text-white/60 font-extralight mb-12 tracking-wide">
               Building things with code
