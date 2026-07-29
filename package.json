@@ -1,0 +1,38 @@
+{
+  "name": "site-perso",
+  "version": "1.0.0",
+  "description": "Developer portfolio with Three.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@tanstack/react-query": "^5.101.4",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "ky": "^2.0.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.18.2",
+    "three": "^0.185.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/three": "^0.185.1",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.24",
+    "tailwindcss": "^4.3.3"
+  }
+}
