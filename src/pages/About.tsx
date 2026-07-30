@@ -149,7 +149,7 @@ export default function About() {
 
         <section>
           <a
-            href={`${import.meta.env.BASE_URL}/cv`}
+            href={`${import.meta.env.BASE_URL}cv`}
             className="inline-block bg-white/20 hover:bg-white/30 px-6 py-3 rounded-2xl transition text-white border border-white/30 font-medium"
           >
             {t('about.downloadCV')}
