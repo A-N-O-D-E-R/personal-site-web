@@ -9,10 +9,9 @@ export default function SolarSystem() {
   const sunRef = useRef<Mesh>(null)
 
   // Load textures
-  const earthTexture = useTexture('/textures/planets/earth_atmos_2048.jpg')
-  const sunTexture = useTexture('/textures/sun_lava.jpg')
-
-  const planets = [
+  const earthTexture = useTexture(`${import.meta.env.BASE_URL}/textures/planets/earth_atmos_2048.jpg`)
+  const sunTexture = useTexture(`${import.meta.env.BASE_URL}/textures/sun_lava.jpg`)
+    const planets = [
     { radius: 0.3, distance: 2, speed: 0.5, color: '#8b8680', name: 'Mercury' },
     { radius: 0.4, distance: 3.5, speed: 0.3, color: '#e8cda2', name: 'Venus' },
     { radius: 0.35, distance: 5, speed: 0.2, texture: earthTexture, name: 'Earth' },

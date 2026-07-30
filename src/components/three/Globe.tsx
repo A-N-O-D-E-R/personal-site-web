@@ -12,7 +12,7 @@ const Globe = forwardRef<Group, Props>(({ children }, forwardedRef) => {
   const internalRef = useRef<Group>(null)
   const ref = (forwardedRef as any) || internalRef
   const reducedMotion = usePrefersReducedMotion()
-  const texture = useTexture('/world.jpg')
+  const texture = useTexture(`${import.meta.env.BASE_URL}world.jpg`)
   const { camera } = useThree()
 
   useFrame(() => {

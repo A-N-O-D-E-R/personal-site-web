@@ -15,7 +15,7 @@ import { latLonToSphere } from '../utils/coords'
 import { useTranslation } from '../i18n/useTranslation'
 
 function Sun() {
-  const sunTexture = useTexture('/textures/sun_lava.jpg')
+  const sunTexture = useTexture(`${import.meta.env.BASE_URL}/textures/sun_lava.jpg`)
 
   return (
     <mesh position={[50, 20, 30]}>

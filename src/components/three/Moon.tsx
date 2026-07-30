@@ -5,7 +5,7 @@ import { Group } from 'three'
 
 export default function Moon() {
   const groupRef = useRef<Group>(null)
-  const moonTexture = useTexture('/textures/moon.jpg')
+  const moonTexture = useTexture(`${import.meta.env.BASE_URL}/textures/moon.jpg`)
 
   useFrame(({ clock }) => {
     if (groupRef.current) {
