@@ -2,6 +2,7 @@ import { Suspense, useMemo, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera, Sparkles } from '@react-three/drei'
 import { useQuery } from '@tanstack/react-query'
+import { NavLink } from "react-router-dom";
 import StarField from '../components/three/StarField'
 import SkillConstellation from '../components/three/SkillConstellation'
 import FloatingParticles from '../components/three/FloatingParticles'
@@ -148,12 +149,18 @@ export default function About() {
         </section>
 
         <section>
-          <a
-            href={`${import.meta.env.BASE_URL}cv`}
-            className="inline-block bg-white/20 hover:bg-white/30 px-6 py-3 rounded-2xl transition text-white border border-white/30 font-medium"
+          <NavLink
+            to="/cv"
+            className={({ isActive }) =>
+              `inline-block px-6 py-3 rounded-2xl transition border font-medium ${
+                isActive
+                  ? "bg-white/30 border-white/40 text-white"
+                  : "bg-white/20 hover:bg-white/30 border-white/30 text-white"
+              }`
+            }
           >
-            {t('about.downloadCV')}
-          </a>
+            {t("about.downloadCV")}
+          </NavLink>
         </section>
       </div>
     </div>
