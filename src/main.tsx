@@ -17,7 +17,7 @@ const CV = lazy(() => import('./pages/CV'))
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename="/personal-site-web">
         <Suspense fallback={
           <div className="h-screen flex items-center justify-center">
             <div className="text-gray-400">Loading...</div>
